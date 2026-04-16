@@ -1,0 +1,36 @@
+#Para que tu aplicación funcione en local y se despliegue correctamente en Vercel, necesitamos definir las dependencias.
+#--Motor principal de la web-->
+Flask==3.0.0
+#Es el Framework (el marco de trabajo). Es el motor principal que recibe las peticiones de los usuarios cuando entran en la web,
+#decide qué ruta ejecutar (la home, el gestor, etc.) y devuelve el HTML al navegador. Es minimalista y ligero, ideal para proyectos modulares.
+
+#____________________________________ Conexión y gestión de Base de Datos--->
+Flask-SQLAlchemy==3.1.1
+#Es el traductor (ORM). Sirve para conectar Flask con tu base de datos SQL. 
+#Te permite interactuar con las tablas como si fueran objetos de Python (clases),
+# evitando que tengas que escribir código SQL puro para tareas comunes como guardar un usuario o buscar un equipo.
+#____________________________________
+psycopg2-binary==2.9.9
+#____________________________________
+#Es el adaptador de base de datos. Es una pieza de bajo nivel que permite que Python "hable" 
+#con PostgreSQL (la base de datos de Vercel). Sin esto, SQLAlchemy no sabría cómo enviar los datos físicamente al servidor de base de datos.
+
+#______________________Seguridad y Sesiones de Usuario----->
+Flask-Login==0.6.3
+#Es el gestor de sesiones. Se encarga de la parte "aburrida" pero crítica de la seguridad: 
+#recordar quién está logueado, proteger las rutas para que solo entren administradores y gestionar
+# las cookies de sesión para que el usuario no tenga que poner su contraseña en cada página.
+#____________________________________
+Werkzeug==3.0.1
+#____________________________________
+#Es la librería de utilidades WSGI. En realidad es una base sobre la que corre Flask.
+# Nosotros la usaremos principalmente por sus funciones de seguridad, como generate_password_hash, 
+#para que las contraseñas de tus usuarios nunca se guarden en texto plano, sino encriptadas.
+
+#____________________Configuración de variables de entorno (Secretos)----->
+python-dotenv==1.0.0
+#Es el gestor de secretos. Sirve para que Flask pueda leer archivos .env.
+# En esos archivos guardaremos la contraseña de la base de datos y la SECRET_KEY. Es vital para la 
+#seguridad: así evitas subir tus contraseñas por error a GitHub.
+#____________________________________
+

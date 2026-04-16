@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Registro de Entrenador{% block title %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0">Registro BellviBowl</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">Nombre de Entrenador</label>
+                        <input type="text" name="nombre" class="form-control" required placeholder="Ej: Morko">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Número NAF</label>
+                        <input type="text" name="naf" class="form-control" required placeholder="Tu ID de la NAF">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Correo Electrónico</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Contraseña</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-danger w-100">Crear Cuenta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
